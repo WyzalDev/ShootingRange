@@ -1,4 +1,5 @@
 using Leopotam.Ecs;
+using ShooterRange.Shotgun;
 using UnityEngine;
 using Voody.UniLeo;
 
@@ -21,6 +22,9 @@ namespace Client
 #endif
             _systems
                 .ConvertScene()
+                .Add(new ShotgunSwayHandler())
+                .Add(new ShotgunMovementHandler())
+                .Add(new ShotgunLookOnMouseLocker())
                 // register your systems here, for example:
                 // .Add (new TestSystem1 ())
                 // .Add (new TestSystem2 ())
